@@ -1,0 +1,712 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75AB32A82AE31C83001445C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32A72AE31C83001445C6 /* AppDelegate.swift */; };
+		75AB32AC2AE31C83001445C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32AB2AE31C83001445C6 /* ViewController.swift */; };
+		75AB32AF2AE31C83001445C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32AD2AE31C83001445C6 /* Main.storyboard */; };
+		75AB32B22AE31C83001445C6 /* DailyDish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32B02AE31C83001445C6 /* DailyDish.xcdatamodeld */; };
+		75AB32B42AE31C8A001445C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32B32AE31C8A001445C6 /* Assets.xcassets */; };
+		75AB32B72AE31C8A001445C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32B52AE31C8A001445C6 /* LaunchScreen.storyboard */; };
+		75AB32BF2AE31CB4001445C6 /* AppCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32BE2AE31CB4001445C6 /* AppCenter.swift */; };
+		75AB32C12AE31CD0001445C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32C02AE31CD0001445C6 /* Extensions.swift */; };
+		75AB32DF2AE31D13001445C6 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32C32AE31D12001445C6 /* UserManager.swift */; };
+		75AB32E02AE31D13001445C6 /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32C42AE31D12001445C6 /* APIRoutes.swift */; };
+		75AB32E12AE31D13001445C6 /* Loopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32C52AE31D12001445C6 /* Loopable.swift */; };
+		75AB32E22AE31D13001445C6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32C62AE31D13001445C6 /* Extension.swift */; };
+		75AB32E32AE31D13001445C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32C72AE31D13001445C6 /* Router.swift */; };
+		75AB32E42AE31D13001445C6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32C82AE31D13001445C6 /* Colors.swift */; };
+		75AB32E52AE31D13001445C6 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32CB2AE31D13001445C6 /* Montserrat-LightItalic.ttf */; };
+		75AB32E62AE31D13001445C6 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32CC2AE31D13001445C6 /* Montserrat-Medium.ttf */; };
+		75AB32E72AE31D13001445C6 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32CD2AE31D13001445C6 /* Montserrat-BoldItalic.ttf */; };
+		75AB32E82AE31D13001445C6 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32CE2AE31D13001445C6 /* Montserrat-Light.ttf */; };
+		75AB32E92AE31D13001445C6 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32CF2AE31D13001445C6 /* Montserrat-ThinItalic.ttf */; };
+		75AB32EA2AE31D13001445C6 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D02AE31D13001445C6 /* Montserrat-ExtraLight.ttf */; };
+		75AB32EB2AE31D13001445C6 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D12AE31D13001445C6 /* Montserrat-Thin.ttf */; };
+		75AB32EC2AE31D13001445C6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D22AE31D13001445C6 /* Montserrat-Bold.ttf */; };
+		75AB32ED2AE31D13001445C6 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D32AE31D13001445C6 /* Montserrat-MediumItalic.ttf */; };
+		75AB32EE2AE31D13001445C6 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D42AE31D13001445C6 /* Montserrat-BlackItalic.ttf */; };
+		75AB32EF2AE31D13001445C6 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D52AE31D13001445C6 /* Montserrat-SemiBold.ttf */; };
+		75AB32F02AE31D13001445C6 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D62AE31D13001445C6 /* Montserrat-ExtraLightItalic.ttf */; };
+		75AB32F12AE31D13001445C6 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D72AE31D13001445C6 /* Montserrat-ExtraBold.ttf */; };
+		75AB32F22AE31D13001445C6 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D82AE31D13001445C6 /* OFL.txt */; };
+		75AB32F32AE31D13001445C6 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32D92AE31D13001445C6 /* Montserrat-Black.ttf */; };
+		75AB32F42AE31D13001445C6 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32DA2AE31D13001445C6 /* Montserrat-Regular.ttf */; };
+		75AB32F52AE31D13001445C6 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32DB2AE31D13001445C6 /* Montserrat-Italic.ttf */; };
+		75AB32F62AE31D13001445C6 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32DC2AE31D13001445C6 /* Montserrat-SemiBoldItalic.ttf */; };
+		75AB32F72AE31D13001445C6 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32DD2AE31D13001445C6 /* Montserrat-ExtraBoldItalic.ttf */; };
+		75AB32F82AE31D13001445C6 /* LanguageCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32DE2AE31D13001445C6 /* LanguageCenter.swift */; };
+		75AB33062AE31D28001445C6 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32FB2AE31D28001445C6 /* NetworkRouter.swift */; };
+		75AB33072AE31D28001445C6 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32FC2AE31D28001445C6 /* NetworkResponse.swift */; };
+		75AB33082AE31D28001445C6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32FD2AE31D28001445C6 /* Result.swift */; };
+		75AB33092AE31D28001445C6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32FE2AE31D28001445C6 /* NetworkManager.swift */; };
+		75AB330A2AE31D28001445C6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32FF2AE31D28001445C6 /* Response.swift */; };
+		75AB330B2AE31D28001445C6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33002AE31D28001445C6 /* Observable.swift */; };
+		75AB330C2AE31D28001445C6 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33012AE31D28001445C6 /* Parser.swift */; };
+		75AB330D2AE31D28001445C6 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33022AE31D28001445C6 /* EndpointType.swift */; };
+		75AB330E2AE31D28001445C6 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33042AE31D28001445C6 /* Endpoints.swift */; };
+		75AB330F2AE31D28001445C6 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33052AE31D28001445C6 /* ParseManager.swift */; };
+		75AB33162AE31D37001445C6 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33122AE31D37001445C6 /* BaseController.swift */; };
+		75AB33172AE31D37001445C6 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33132AE31D37001445C6 /* LoaderView.swift */; };
+		75AB33182AE31D37001445C6 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33142AE31D37001445C6 /* CheckBox.swift */; };
+		75AB331E2AE31D85001445C6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB331D2AE31D85001445C6 /* TabBarController.swift */; };
+		75AB33212AE31F26001445C6 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33202AE31F26001445C6 /* MainController.swift */; };
+		75AB33242AE32127001445C6 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33232AE32127001445C6 /* SearchCell.swift */; };
+		75AB33262AE32428001445C6 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33252AE32428001445C6 /* BaseTextField.swift */; };
+		F6E1C9F35CA2F77627E0002A /* Pods_DailyDish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F9522F27112E28C11D0358 /* Pods_DailyDish.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5F383EB8A11DE4AE19C2E454 /* Pods-DailyDish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDish.release.xcconfig"; path = "Target Support Files/Pods-DailyDish/Pods-DailyDish.release.xcconfig"; sourceTree = "<group>"; };
+		75AB32A42AE31C83001445C6 /* DailyDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75AB32A72AE31C83001445C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		75AB32AB2AE31C83001445C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		75AB32AE2AE31C83001445C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		75AB32B12AE31C83001445C6 /* DailyDish.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyDish.xcdatamodel; sourceTree = "<group>"; };
+		75AB32B32AE31C8A001445C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75AB32B62AE31C8A001445C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		75AB32B82AE31C8A001445C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75AB32BE2AE31CB4001445C6 /* AppCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenter.swift; sourceTree = "<group>"; };
+		75AB32C02AE31CD0001445C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		75AB32C32AE31D12001445C6 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		75AB32C42AE31D12001445C6 /* APIRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
+		75AB32C52AE31D12001445C6 /* Loopable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loopable.swift; sourceTree = "<group>"; };
+		75AB32C62AE31D13001445C6 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		75AB32C72AE31D13001445C6 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		75AB32C82AE31D13001445C6 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		75AB32CB2AE31D13001445C6 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		75AB32CC2AE31D13001445C6 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		75AB32CD2AE31D13001445C6 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		75AB32CE2AE31D13001445C6 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		75AB32CF2AE31D13001445C6 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		75AB32D02AE31D13001445C6 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		75AB32D12AE31D13001445C6 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		75AB32D22AE31D13001445C6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		75AB32D32AE31D13001445C6 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		75AB32D42AE31D13001445C6 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		75AB32D52AE31D13001445C6 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		75AB32D62AE31D13001445C6 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		75AB32D72AE31D13001445C6 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		75AB32D82AE31D13001445C6 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		75AB32D92AE31D13001445C6 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		75AB32DA2AE31D13001445C6 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		75AB32DB2AE31D13001445C6 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		75AB32DC2AE31D13001445C6 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		75AB32DD2AE31D13001445C6 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		75AB32DE2AE31D13001445C6 /* LanguageCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageCenter.swift; sourceTree = "<group>"; };
+		75AB32FB2AE31D28001445C6 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		75AB32FC2AE31D28001445C6 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		75AB32FD2AE31D28001445C6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		75AB32FE2AE31D28001445C6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		75AB32FF2AE31D28001445C6 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		75AB33002AE31D28001445C6 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		75AB33012AE31D28001445C6 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		75AB33022AE31D28001445C6 /* EndpointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		75AB33042AE31D28001445C6 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		75AB33052AE31D28001445C6 /* ParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
+		75AB33122AE31D37001445C6 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		75AB33132AE31D37001445C6 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		75AB33142AE31D37001445C6 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		75AB331D2AE31D85001445C6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		75AB33202AE31F26001445C6 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		75AB33232AE32127001445C6 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		75AB33252AE32428001445C6 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		A4F9522F27112E28C11D0358 /* Pods_DailyDish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97F6D5A8C19AADD28876BAB /* Pods-DailyDish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDish.debug.xcconfig"; path = "Target Support Files/Pods-DailyDish/Pods-DailyDish.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75AB32A12AE31C83001445C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6E1C9F35CA2F77627E0002A /* Pods_DailyDish.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E7729C1FEF274CB8CF280D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4F9522F27112E28C11D0358 /* Pods_DailyDish.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75AB329B2AE31C83001445C6 = {
+			isa = PBXGroup;
+			children = (
+				75AB32A62AE31C83001445C6 /* DailyDish */,
+				75AB32A52AE31C83001445C6 /* Products */,
+				A372C792C5E4E052DDA409BC /* Pods */,
+				4E7729C1FEF274CB8CF280D6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		75AB32A52AE31C83001445C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75AB32A42AE31C83001445C6 /* DailyDish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75AB32A62AE31C83001445C6 /* DailyDish */ = {
+			isa = PBXGroup;
+			children = (
+				75AB32F92AE31D28001445C6 /* API */,
+				75AB33102AE31D37001445C6 /* Base */,
+				75AB331B2AE31D69001445C6 /* Modules */,
+				75AB32C22AE31D12001445C6 /* Source */,
+				75AB32A72AE31C83001445C6 /* AppDelegate.swift */,
+				75AB32AB2AE31C83001445C6 /* ViewController.swift */,
+				75AB32AD2AE31C83001445C6 /* Main.storyboard */,
+				75AB32B32AE31C8A001445C6 /* Assets.xcassets */,
+				75AB32B52AE31C8A001445C6 /* LaunchScreen.storyboard */,
+				75AB32B82AE31C8A001445C6 /* Info.plist */,
+				75AB32B02AE31C83001445C6 /* DailyDish.xcdatamodeld */,
+				75AB32BE2AE31CB4001445C6 /* AppCenter.swift */,
+				75AB32C02AE31CD0001445C6 /* Extensions.swift */,
+			);
+			path = DailyDish;
+			sourceTree = "<group>";
+		};
+		75AB32C22AE31D12001445C6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				75AB32C32AE31D12001445C6 /* UserManager.swift */,
+				75AB32C42AE31D12001445C6 /* APIRoutes.swift */,
+				75AB32C52AE31D12001445C6 /* Loopable.swift */,
+				75AB32C62AE31D13001445C6 /* Extension.swift */,
+				75AB32C72AE31D13001445C6 /* Router.swift */,
+				75AB32C82AE31D13001445C6 /* Colors.swift */,
+				75AB32C92AE31D13001445C6 /* Fonts */,
+				75AB32DE2AE31D13001445C6 /* LanguageCenter.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		75AB32C92AE31D13001445C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				75AB32CA2AE31D13001445C6 /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		75AB32CA2AE31D13001445C6 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				75AB32CB2AE31D13001445C6 /* Montserrat-LightItalic.ttf */,
+				75AB32CC2AE31D13001445C6 /* Montserrat-Medium.ttf */,
+				75AB32CD2AE31D13001445C6 /* Montserrat-BoldItalic.ttf */,
+				75AB32CE2AE31D13001445C6 /* Montserrat-Light.ttf */,
+				75AB32CF2AE31D13001445C6 /* Montserrat-ThinItalic.ttf */,
+				75AB32D02AE31D13001445C6 /* Montserrat-ExtraLight.ttf */,
+				75AB32D12AE31D13001445C6 /* Montserrat-Thin.ttf */,
+				75AB32D22AE31D13001445C6 /* Montserrat-Bold.ttf */,
+				75AB32D32AE31D13001445C6 /* Montserrat-MediumItalic.ttf */,
+				75AB32D42AE31D13001445C6 /* Montserrat-BlackItalic.ttf */,
+				75AB32D52AE31D13001445C6 /* Montserrat-SemiBold.ttf */,
+				75AB32D62AE31D13001445C6 /* Montserrat-ExtraLightItalic.ttf */,
+				75AB32D72AE31D13001445C6 /* Montserrat-ExtraBold.ttf */,
+				75AB32D82AE31D13001445C6 /* OFL.txt */,
+				75AB32D92AE31D13001445C6 /* Montserrat-Black.ttf */,
+				75AB32DA2AE31D13001445C6 /* Montserrat-Regular.ttf */,
+				75AB32DB2AE31D13001445C6 /* Montserrat-Italic.ttf */,
+				75AB32DC2AE31D13001445C6 /* Montserrat-SemiBoldItalic.ttf */,
+				75AB32DD2AE31D13001445C6 /* Montserrat-ExtraBoldItalic.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		75AB32F92AE31D28001445C6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				75AB32FA2AE31D28001445C6 /* NetworkManager */,
+				75AB33032AE31D28001445C6 /* Parser */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		75AB32FA2AE31D28001445C6 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				75AB32FB2AE31D28001445C6 /* NetworkRouter.swift */,
+				75AB32FC2AE31D28001445C6 /* NetworkResponse.swift */,
+				75AB32FD2AE31D28001445C6 /* Result.swift */,
+				75AB32FE2AE31D28001445C6 /* NetworkManager.swift */,
+				75AB32FF2AE31D28001445C6 /* Response.swift */,
+				75AB33002AE31D28001445C6 /* Observable.swift */,
+				75AB33012AE31D28001445C6 /* Parser.swift */,
+				75AB33022AE31D28001445C6 /* EndpointType.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		75AB33032AE31D28001445C6 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				75AB33042AE31D28001445C6 /* Endpoints.swift */,
+				75AB33052AE31D28001445C6 /* ParseManager.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		75AB33102AE31D37001445C6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				75AB33122AE31D37001445C6 /* BaseController.swift */,
+				75AB33132AE31D37001445C6 /* LoaderView.swift */,
+				75AB33142AE31D37001445C6 /* CheckBox.swift */,
+				75AB33252AE32428001445C6 /* BaseTextField.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		75AB331B2AE31D69001445C6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				75AB331F2AE31F13001445C6 /* Main */,
+				75AB331C2AE31D7A001445C6 /* TabBar */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		75AB331C2AE31D7A001445C6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				75AB331D2AE31D85001445C6 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		75AB331F2AE31F13001445C6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				75AB33202AE31F26001445C6 /* MainController.swift */,
+				75AB33222AE32114001445C6 /* View + Cells */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		75AB33222AE32114001445C6 /* View + Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75AB33232AE32127001445C6 /* SearchCell.swift */,
+			);
+			path = "View + Cells";
+			sourceTree = "<group>";
+		};
+		A372C792C5E4E052DDA409BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C97F6D5A8C19AADD28876BAB /* Pods-DailyDish.debug.xcconfig */,
+				5F383EB8A11DE4AE19C2E454 /* Pods-DailyDish.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75AB32A32AE31C83001445C6 /* DailyDish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75AB32BB2AE31C8A001445C6 /* Build configuration list for PBXNativeTarget "DailyDish" */;
+			buildPhases = (
+				FB029494B3670B8BC32E509D /* [CP] Check Pods Manifest.lock */,
+				75AB32A02AE31C83001445C6 /* Sources */,
+				75AB32A12AE31C83001445C6 /* Frameworks */,
+				75AB32A22AE31C83001445C6 /* Resources */,
+				FC15F1CC9D8CB56175213806 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyDish;
+			productName = DailyDish;
+			productReference = 75AB32A42AE31C83001445C6 /* DailyDish.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75AB329C2AE31C83001445C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					75AB32A32AE31C83001445C6 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 75AB329F2AE31C83001445C6 /* Build configuration list for PBXProject "DailyDish" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75AB329B2AE31C83001445C6;
+			productRefGroup = 75AB32A52AE31C83001445C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75AB32A32AE31C83001445C6 /* DailyDish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75AB32A22AE31C83001445C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75AB32F62AE31D13001445C6 /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				75AB32F22AE31D13001445C6 /* OFL.txt in Resources */,
+				75AB32EB2AE31D13001445C6 /* Montserrat-Thin.ttf in Resources */,
+				75AB32E82AE31D13001445C6 /* Montserrat-Light.ttf in Resources */,
+				75AB32F02AE31D13001445C6 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				75AB32E72AE31D13001445C6 /* Montserrat-BoldItalic.ttf in Resources */,
+				75AB32E92AE31D13001445C6 /* Montserrat-ThinItalic.ttf in Resources */,
+				75AB32F12AE31D13001445C6 /* Montserrat-ExtraBold.ttf in Resources */,
+				75AB32F42AE31D13001445C6 /* Montserrat-Regular.ttf in Resources */,
+				75AB32E52AE31D13001445C6 /* Montserrat-LightItalic.ttf in Resources */,
+				75AB32EA2AE31D13001445C6 /* Montserrat-ExtraLight.ttf in Resources */,
+				75AB32E62AE31D13001445C6 /* Montserrat-Medium.ttf in Resources */,
+				75AB32B72AE31C8A001445C6 /* LaunchScreen.storyboard in Resources */,
+				75AB32B42AE31C8A001445C6 /* Assets.xcassets in Resources */,
+				75AB32EE2AE31D13001445C6 /* Montserrat-BlackItalic.ttf in Resources */,
+				75AB32EF2AE31D13001445C6 /* Montserrat-SemiBold.ttf in Resources */,
+				75AB32F52AE31D13001445C6 /* Montserrat-Italic.ttf in Resources */,
+				75AB32EC2AE31D13001445C6 /* Montserrat-Bold.ttf in Resources */,
+				75AB32ED2AE31D13001445C6 /* Montserrat-MediumItalic.ttf in Resources */,
+				75AB32AF2AE31C83001445C6 /* Main.storyboard in Resources */,
+				75AB32F32AE31D13001445C6 /* Montserrat-Black.ttf in Resources */,
+				75AB32F72AE31D13001445C6 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FB029494B3670B8BC32E509D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyDish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC15F1CC9D8CB56175213806 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyDish/Pods-DailyDish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyDish/Pods-DailyDish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyDish/Pods-DailyDish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75AB32A02AE31C83001445C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75AB330B2AE31D28001445C6 /* Observable.swift in Sources */,
+				75AB32E32AE31D13001445C6 /* Router.swift in Sources */,
+				75AB33162AE31D37001445C6 /* BaseController.swift in Sources */,
+				75AB33172AE31D37001445C6 /* LoaderView.swift in Sources */,
+				75AB32E42AE31D13001445C6 /* Colors.swift in Sources */,
+				75AB32F82AE31D13001445C6 /* LanguageCenter.swift in Sources */,
+				75AB32AC2AE31C83001445C6 /* ViewController.swift in Sources */,
+				75AB330A2AE31D28001445C6 /* Response.swift in Sources */,
+				75AB32C12AE31CD0001445C6 /* Extensions.swift in Sources */,
+				75AB33242AE32127001445C6 /* SearchCell.swift in Sources */,
+				75AB32DF2AE31D13001445C6 /* UserManager.swift in Sources */,
+				75AB33082AE31D28001445C6 /* Result.swift in Sources */,
+				75AB33262AE32428001445C6 /* BaseTextField.swift in Sources */,
+				75AB33212AE31F26001445C6 /* MainController.swift in Sources */,
+				75AB33182AE31D37001445C6 /* CheckBox.swift in Sources */,
+				75AB32E12AE31D13001445C6 /* Loopable.swift in Sources */,
+				75AB330E2AE31D28001445C6 /* Endpoints.swift in Sources */,
+				75AB32B22AE31C83001445C6 /* DailyDish.xcdatamodeld in Sources */,
+				75AB32E22AE31D13001445C6 /* Extension.swift in Sources */,
+				75AB330C2AE31D28001445C6 /* Parser.swift in Sources */,
+				75AB33092AE31D28001445C6 /* NetworkManager.swift in Sources */,
+				75AB330D2AE31D28001445C6 /* EndpointType.swift in Sources */,
+				75AB330F2AE31D28001445C6 /* ParseManager.swift in Sources */,
+				75AB32A82AE31C83001445C6 /* AppDelegate.swift in Sources */,
+				75AB33072AE31D28001445C6 /* NetworkResponse.swift in Sources */,
+				75AB32E02AE31D13001445C6 /* APIRoutes.swift in Sources */,
+				75AB331E2AE31D85001445C6 /* TabBarController.swift in Sources */,
+				75AB32BF2AE31CB4001445C6 /* AppCenter.swift in Sources */,
+				75AB33062AE31D28001445C6 /* NetworkRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		75AB32AD2AE31C83001445C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75AB32AE2AE31C83001445C6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		75AB32B52AE31C8A001445C6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75AB32B62AE31C8A001445C6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75AB32B92AE31C8A001445C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		75AB32BA2AE31C8A001445C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75AB32BC2AE31C8A001445C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C97F6D5A8C19AADD28876BAB /* Pods-DailyDish.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyDish/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GGWP.DailyDish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75AB32BD2AE31C8A001445C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F383EB8A11DE4AE19C2E454 /* Pods-DailyDish.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyDish/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = GGWP.DailyDish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75AB329F2AE31C83001445C6 /* Build configuration list for PBXProject "DailyDish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75AB32B92AE31C8A001445C6 /* Debug */,
+				75AB32BA2AE31C8A001445C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75AB32BB2AE31C8A001445C6 /* Build configuration list for PBXNativeTarget "DailyDish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75AB32BC2AE31C8A001445C6 /* Debug */,
+				75AB32BD2AE31C8A001445C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		75AB32B02AE31C83001445C6 /* DailyDish.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				75AB32B12AE31C83001445C6 /* DailyDish.xcdatamodel */,
+			);
+			currentVersion = 75AB32B12AE31C83001445C6 /* DailyDish.xcdatamodel */;
+			path = DailyDish.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 75AB329C2AE31C83001445C6 /* Project object */;
+}
