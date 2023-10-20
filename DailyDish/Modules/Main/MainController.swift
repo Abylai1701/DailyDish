@@ -13,9 +13,7 @@ final class MainController: BaseController {
         table.dataSource = self
         return table
     }()
-    
-    
-    //asdad
+ 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +43,7 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
         1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(

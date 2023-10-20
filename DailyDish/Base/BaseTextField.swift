@@ -28,12 +28,12 @@ class BaseTextField: UITextField {
     // MARK: - Setup
     func setupViews() -> Void {
         text = ""
-        textColor = .white
+        textColor = .grayColor
         delegate = self
         font = .montserratRegular(ofSize: 16)
         backgroundColor = .white
         
-        let space = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 0))
+        let space = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 0))
         leftView = space
         leftViewMode = .always
         
@@ -59,12 +59,12 @@ class BaseTextField: UITextField {
 }
 extension BaseTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor.grayColor.cgColor
+        textField.layer.borderColor = UIColor.black.cgColor
         textField.backgroundColor = .white
         
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor.grayColor.cgColor
+        textField.layer.borderColor = UIColor.black.cgColor
         textField.backgroundColor = .white
     }
 }
