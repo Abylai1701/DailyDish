@@ -3,6 +3,8 @@ import UIKit
 class GenRecipeCell: UITableViewCell {
     
     //MARK: - Properties
+    var generateAction: (()->())?
+
     private lazy var container: UIView = {
         let container = UIView()
         container.backgroundColor = .white
@@ -55,6 +57,9 @@ class GenRecipeCell: UITableViewCell {
                         for: .normal)
         button.setTitleColor(.white,
                              for: .normal)
+        button.addTarget(self,
+                         action: #selector(tapGenerate),
+                         for: .touchUpInside)
         return button
     }()
     lazy var notes2: UIImageView = {
@@ -121,7 +126,9 @@ class GenRecipeCell: UITableViewCell {
             make.width.equalTo(21)
         }
     }
-    
+    @objc private func tapGenerate() {
+        generateAction?()
+    }
 //    func configure(model: GoalModel) {
 //        titleLabel.text = model.name
 //        let progress = Int((model.currentSeries * 100)/model.iterationCount)

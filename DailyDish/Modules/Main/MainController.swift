@@ -16,7 +16,6 @@ final class MainController: BaseController {
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero,
                                 style: .grouped)
-        table.separatorStyle = .none
         table.register(SearchCell.self,
                        forCellReuseIdentifier: SearchCell.cellId)
         table.register(GenRecipeCell.self,
@@ -66,10 +65,18 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
         case .search:
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.cellId,
                                                      for: indexPath) as! SearchCell
+            cell.searchPage = {
+                let vc = SearchRecipesVC()
+                Router.shared.push(vc)
+            }
             return cell
         case .generate:
             let cell = tableView.dequeueReusableCell(withIdentifier: GenRecipeCell.cellId,
                                                      for: indexPath) as! GenRecipeCell
+            cell.generateAction = {
+                let vc = RecipeDetailVC()
+                Router.shared.push(vc)
+            }
             return cell
         case .collection:
             let cell = tableView.dequeueReusableCell(withIdentifier: PrevRecipesCollCell.cellId,
@@ -95,18 +102,6 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
         }
         return nil
     }
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let vc = GoalDetailVC(id: goals[indexPath.section].id)
-    //        vc.doneAction = {[weak self] in
-    //            guard let self = self else {return}
-    //            self.viewModel.doneGoal(id: self.goals[indexPath.section].id)
-    //        }
-    //        vc.deleteAction = {[weak self] in
-    //            guard let self = self else {return}
-    //            self.viewModel.removeGoal(id: self.goals[indexPath.section].id)
-    //        }
-    //        Router.shared.push(vc)
-    //    }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? { nil }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { 0 }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

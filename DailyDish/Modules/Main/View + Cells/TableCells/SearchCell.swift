@@ -3,6 +3,8 @@ import UIKit
 class SearchCell: UITableViewCell {
     
     //MARK: - Properties
+    var searchPage: (()->())?
+
     private lazy var nameField: BaseTextField = {
         let field = BaseTextField()
         field.rightImage.isHidden = true
@@ -27,7 +29,10 @@ class SearchCell: UITableViewCell {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     //MARK: - Setup Views
     private func setupViews() {
+        nameField.isUserInteractionEnabled = false
         contentView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(searchRecipe))
+        contentView.addGestureRecognizer(tapGesture)
         selectionStyle = .none
         addSubviews(nameField)
         nameField.snp.makeConstraints { make in
@@ -38,13 +43,10 @@ class SearchCell: UITableViewCell {
         }
         
     }
-    
-//    func configure(model: GoalModel) {
-//        titleLabel.text = model.name
-//        let progress = Int((model.currentSeries * 100)/model.iterationCount)
-//        progressView.progress = Float(progress) * 0.01
-//        countLabel.text = "\(model.iterationCount)/\(model.currentSeries)"
-//    }
+    @objc
+    func searchRecipe() {
+        searchPage?()
+    }
 }
 
 extension SearchCell: UITextFieldDelegate {
