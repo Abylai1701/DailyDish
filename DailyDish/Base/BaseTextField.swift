@@ -28,7 +28,7 @@ class BaseTextField: UITextField {
     // MARK: - Setup
     func setupViews() -> Void {
         text = ""
-        textColor = .grayColor
+        textColor = .black
         delegate = self
         font = .montserratRegular(ofSize: 16)
         backgroundColor = .white

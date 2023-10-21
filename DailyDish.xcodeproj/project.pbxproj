@@ -58,6 +58,10 @@
 		75AB33212AE31F26001445C6 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33202AE31F26001445C6 /* MainController.swift */; };
 		75AB33242AE32127001445C6 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33232AE32127001445C6 /* SearchCell.swift */; };
 		75AB33262AE32428001445C6 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB33252AE32428001445C6 /* BaseTextField.swift */; };
+		75D8BD702AE3349D005CBD0C /* GenRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8BD6F2AE3349D005CBD0C /* GenRecipeCell.swift */; };
+		75D8BD742AE3415A005CBD0C /* PrevRecipesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8BD732AE3415A005CBD0C /* PrevRecipesCell.swift */; };
+		75D8BD762AE34470005CBD0C /* PrevRecipesCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8BD752AE3446F005CBD0C /* PrevRecipesCollCell.swift */; };
+		75D8BD782AE34758005CBD0C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D8BD772AE34758005CBD0C /* SectionHeaderView.swift */; };
 		F6E1C9F35CA2F77627E0002A /* Pods_DailyDish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F9522F27112E28C11D0358 /* Pods_DailyDish.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +120,10 @@
 		75AB33202AE31F26001445C6 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		75AB33232AE32127001445C6 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		75AB33252AE32428001445C6 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		75D8BD6F2AE3349D005CBD0C /* GenRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenRecipeCell.swift; sourceTree = "<group>"; };
+		75D8BD732AE3415A005CBD0C /* PrevRecipesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevRecipesCell.swift; sourceTree = "<group>"; };
+		75D8BD752AE3446F005CBD0C /* PrevRecipesCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevRecipesCollCell.swift; sourceTree = "<group>"; };
+		75D8BD772AE34758005CBD0C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		A4F9522F27112E28C11D0358 /* Pods_DailyDish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyDish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97F6D5A8C19AADD28876BAB /* Pods-DailyDish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyDish.debug.xcconfig"; path = "Target Support Files/Pods-DailyDish/Pods-DailyDish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -300,9 +308,29 @@
 		75AB33222AE32114001445C6 /* View + Cells */ = {
 			isa = PBXGroup;
 			children = (
-				75AB33232AE32127001445C6 /* SearchCell.swift */,
+				75D8BD772AE34758005CBD0C /* SectionHeaderView.swift */,
+				75D8BD722AE3412E005CBD0C /* CollectionCells */,
+				75D8BD712AE3411D005CBD0C /* TableCells */,
 			);
 			path = "View + Cells";
+			sourceTree = "<group>";
+		};
+		75D8BD712AE3411D005CBD0C /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				75AB33232AE32127001445C6 /* SearchCell.swift */,
+				75D8BD6F2AE3349D005CBD0C /* GenRecipeCell.swift */,
+				75D8BD752AE3446F005CBD0C /* PrevRecipesCollCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		75D8BD722AE3412E005CBD0C /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				75D8BD732AE3415A005CBD0C /* PrevRecipesCell.swift */,
+			);
+			path = CollectionCells;
 			sourceTree = "<group>";
 		};
 		A372C792C5E4E052DDA409BC /* Pods */ = {
@@ -448,11 +476,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D8BD702AE3349D005CBD0C /* GenRecipeCell.swift in Sources */,
 				75AB330B2AE31D28001445C6 /* Observable.swift in Sources */,
 				75AB32E32AE31D13001445C6 /* Router.swift in Sources */,
 				75AB33162AE31D37001445C6 /* BaseController.swift in Sources */,
 				75AB33172AE31D37001445C6 /* LoaderView.swift in Sources */,
 				75AB32E42AE31D13001445C6 /* Colors.swift in Sources */,
+				75D8BD762AE34470005CBD0C /* PrevRecipesCollCell.swift in Sources */,
 				75AB32F82AE31D13001445C6 /* LanguageCenter.swift in Sources */,
 				75AB32AC2AE31C83001445C6 /* ViewController.swift in Sources */,
 				75AB330A2AE31D28001445C6 /* Response.swift in Sources */,
@@ -468,6 +498,7 @@
 				75AB32B22AE31C83001445C6 /* DailyDish.xcdatamodeld in Sources */,
 				75AB32E22AE31D13001445C6 /* Extension.swift in Sources */,
 				75AB330C2AE31D28001445C6 /* Parser.swift in Sources */,
+				75D8BD782AE34758005CBD0C /* SectionHeaderView.swift in Sources */,
 				75AB33092AE31D28001445C6 /* NetworkManager.swift in Sources */,
 				75AB330D2AE31D28001445C6 /* EndpointType.swift in Sources */,
 				75AB330F2AE31D28001445C6 /* ParseManager.swift in Sources */,
@@ -477,6 +508,7 @@
 				75AB331E2AE31D85001445C6 /* TabBarController.swift in Sources */,
 				75AB32BF2AE31CB4001445C6 /* AppCenter.swift in Sources */,
 				75AB33062AE31D28001445C6 /* NetworkRouter.swift in Sources */,
+				75D8BD742AE3415A005CBD0C /* PrevRecipesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
