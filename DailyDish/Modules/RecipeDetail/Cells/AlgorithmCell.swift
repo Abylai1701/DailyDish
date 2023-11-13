@@ -35,6 +35,7 @@ class AlgorithmCell: UITableViewCell {
         label.font = .montserratRegular(ofSize: 12)
         label.text = "meat"
         label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     lazy var steps: UILabel = {
@@ -104,10 +105,11 @@ class AlgorithmCell: UITableViewCell {
         }
     }
     
-//    func configure(model: GoalModel) {
-//        titleLabel.text = model.name
-//        let progress = Int((model.currentSeries * 100)/model.iterationCount)
-//        progressView.progress = Float(progress) * 0.01
-//        countLabel.text = "\(model.iterationCount)/\(model.currentSeries)"
-//    }
+    func configure(model: RecipeModel?) {
+        totalTimeValue.text = "\(model?.minutes ?? 0) minutes"
+
+        let formattedIngredients = model?.ingredients.map { "· \($0)" }
+        let ingredientsText = formattedIngredients?.joined(separator: "\n")
+        ingredientsValue.text = ingredientsText
+    }
 }

@@ -66,7 +66,7 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.cellId,
                                                      for: indexPath) as! SearchCell
             cell.searchPage = {
-                let vc = SearchRecipesVC()
+                let vc = GenerationAnimationVC()
                 Router.shared.push(vc)
             }
             return cell
@@ -74,7 +74,7 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: GenRecipeCell.cellId,
                                                      for: indexPath) as! GenRecipeCell
             cell.generateAction = {
-                let vc = RecipeDetailVC()
+                let vc = GenerationAnimationVC()
                 Router.shared.push(vc)
             }
             return cell

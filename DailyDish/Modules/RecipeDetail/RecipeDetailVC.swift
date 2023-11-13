@@ -5,17 +5,17 @@ enum ReceptInfo {
     case cook
 }
 
-final class RecipeDetailVC: BaseController {
+class RecipeDetailVC: UIViewController {
     
     //MARK: - Properties
-//    private let viewModel: EventDetailPageViewModelLogic = EventDetaiPageViewModel()
-//
-//    private var eventModel: EventModel? = nil
+    private let viewModel: RecipeDetailViewModelLogic = RecipeDetailViewModel()
+
+    private var recipeModel: RecipeModel? = nil
     private var sections: [[ReceptInfo]] = [[.description],
                                             [.cook]]
-//    private var id: Int
+    private var id: Int
     
-    private lazy var backButton: UIButton = {
+    lazy var backButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
         button.setImage(UIImage(named: "back_icon"), for: .normal)
@@ -49,49 +49,33 @@ final class RecipeDetailVC: BaseController {
         return table
     }()
     // MARK: - Init
-//    init(id: Int) {
-//        self.id = id
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
+    init(id: Int) {
+        self.id = id
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-//        bind()
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        viewModel.fetchEventDetail(id: self.id)
-//    }
-//    func bind() {
-//        viewModel.eventDetail.observe(on: self) { event in
-//            self.eventModel = event
-//            if self.eventModel?.isFavorite == true {
-//                self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//            } else {
-//                self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-//            }
-//
-//            if UserManager.shared.getAccessToken() == nil{
-//                self.likeButton.isHidden = true
-//            }
-//            if self.eventModel?.team == nil {
-//                self.sections = self.sections.map { section in
-//                    if case .eventInfo(let infoList) = section {
-//                        return .eventInfo(infoList.filter { $0 != .team })
-//                    }
-//                    return section
-//                }
-//            }
-//            self.tableView.reloadData()
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchRecipeDetail(id: self.id)
+        bind()
+    }
+    func bind() {
+        viewModel.randomRecipe.observe(on: self) { recipe in
+            self.recipeModel = recipe
+            
+            self.tableView.reloadData()
+        }
+    }
     //MARK: - Setup Views
     
     private func setupViews() {
@@ -115,15 +99,10 @@ final class RecipeDetailVC: BaseController {
             make.left.equalTo(backButton.snp.right)
             make.top.equalToSuperview().offset(68)
         }
-        
     }
-
-    //MARK: Functions
-    
-//    @objc
-//    private func tapFavorite() {
-//        self.viewModel.favorite(id: id)
-//    }
+    @objc func tapBack() {
+        Router.shared.pop()
+    }
 }
 
 
@@ -141,10 +120,15 @@ extension RecipeDetailVC: UITableViewDelegate, UITableViewDataSource {
         switch sections[indexPath.section][indexPath.row] {
         case .description:
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoCell.cellId, for: indexPath) as! InfoCell
+            cell.selectionStyle = .none
+            cell.configure(model: recipeModel)
             return cell
             
         case .cook:
             let cell = tableView.dequeueReusableCell(withIdentifier: AlgorithmCell.cellId, for: indexPath) as! AlgorithmCell
+            cell.selectionStyle = .none
+            cell.configure(model: recipeModel)
+
             return cell
         }
     }

@@ -8,4 +8,6 @@ target 'DailyDish' do
   # Pods for DailyDish
 
 	pod 'SnapKit'
+  	pod 'Kingfisher'
+	
 end

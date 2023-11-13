@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class InfoCell: UITableViewCell {
     
@@ -13,7 +14,7 @@ class InfoCell: UITableViewCell {
     lazy var mainImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "burito")
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         return image
     }()
     lazy var foodName: UILabel = {
@@ -21,13 +22,7 @@ class InfoCell: UITableViewCell {
         label.font = .montserratSemiBold(ofSize: 20)
         label.text = "Burito"
         label.textColor = .black
-        return label
-    }()
-    lazy var foodType: UILabel = {
-        let label = UILabel()
-        label.font = .montserratRegular(ofSize: 12)
-        label.text = "#Mexican, #MiddleEast etc."
-        label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     lazy var infoLabel: UILabel = {
@@ -51,7 +46,6 @@ class InfoCell: UITableViewCell {
         
         addSubviews(container,
                     foodName,
-                    foodType,
                     infoLabel)
         container.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -69,23 +63,19 @@ class InfoCell: UITableViewCell {
         foodName.snp.makeConstraints { make in
             make.top.equalTo(container.snp.bottom).offset(18)
             make.left.equalToSuperview().offset(16)
-        }
-        foodType.snp.makeConstraints { make in
-            make.top.equalTo(foodName.snp.bottom).offset(8)
-            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
         }
         infoLabel.snp.makeConstraints { make in
-            make.top.equalTo(foodType.snp.bottom).offset(8)
+            make.top.equalTo(foodName.snp.bottom).offset(8)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-16)
         }
     }
     
-//    func configure(model: GoalModel) {
-//        titleLabel.text = model.name
-//        let progress = Int((model.currentSeries * 100)/model.iterationCount)
-//        progressView.progress = Float(progress) * 0.01
-//        countLabel.text = "\(model.iterationCount)/\(model.currentSeries)"
-//    }
+    func configure(model: RecipeModel?) {
+        mainImage.kf.setImage(with: model?.image.url)
+        foodName.text = model?.name
+        infoLabel.text = model?.description
+    }
 }
