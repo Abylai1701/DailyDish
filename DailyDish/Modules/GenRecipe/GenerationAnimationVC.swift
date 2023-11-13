@@ -120,7 +120,6 @@ final class GenerationAnimationVC: UIViewController {
     }
     @objc
     private func tapBack() {
-        let vc = MainController()
-        Router.shared.push(vc)
+        navigationController?.popToRootViewController(animated: true)
     }
 }

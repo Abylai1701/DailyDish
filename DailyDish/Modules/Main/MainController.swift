@@ -66,7 +66,7 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.cellId,
                                                      for: indexPath) as! SearchCell
             cell.searchPage = {
-                let vc = GenerationAnimationVC()
+                let vc = SearchRecipesVC()
                 Router.shared.push(vc)
             }
             return cell
