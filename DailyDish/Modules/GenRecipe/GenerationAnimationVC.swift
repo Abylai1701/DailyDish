@@ -1,6 +1,6 @@
 import UIKit
 
-final class GenerationAnimationVC: UIViewController {
+final class GenerationAnimationVC: BaseController {
     
     //MARK: - Properties
     private let viewModel: GenRecipeViewModelLogic = GenRecipeViewModel()
@@ -38,7 +38,7 @@ final class GenerationAnimationVC: UIViewController {
     }()
     lazy var generatingTitle: UILabel = {
         let label = UILabel()
-        label.font = .montserratRegular(ofSize: 18)
+        label.font = .montserratRegular(ofSize: 20)
         label.text = "Generating..."
         label.textColor = .black
         return label
@@ -57,7 +57,6 @@ final class GenerationAnimationVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Расстояние для анимации вверх и вниз
         let animationDistance: CGFloat = 10
         
         UIView.animate(withDuration: 1.0, delay: 0, options: [.autoreverse, .repeat], animations: {
@@ -65,7 +64,6 @@ final class GenerationAnimationVC: UIViewController {
         }, completion: nil)
         
         timerWorkItem = DispatchWorkItem { [weak self] in
-            // Выполняем переход к другому контроллеру
             self?.navigateToNextController()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: timerWorkItem!)
@@ -106,20 +104,14 @@ final class GenerationAnimationVC: UIViewController {
     }
     private func navigateToNextController() {
         let vc = RecipeDetailVC(id: recipeModel?.id ?? 667)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBack))
-        vc.backTitle.addGestureRecognizer(tapGesture)
-        vc.backButton.addTarget(self,
-                                action: #selector(tapBack),
-                                for: .touchUpInside)
+        vc.backButtonAction = { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
         Router.shared.push(vc)
     }
     @objc
     private func goToMain() {
         timerWorkItem?.cancel()
         Router.shared.pop()
-    }
-    @objc
-    private func tapBack() {
-        navigationController?.popToRootViewController(animated: true)
     }
 }

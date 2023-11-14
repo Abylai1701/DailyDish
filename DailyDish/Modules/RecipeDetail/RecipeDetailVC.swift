@@ -9,7 +9,8 @@ class RecipeDetailVC: UIViewController {
     
     //MARK: - Properties
     private let viewModel: RecipeDetailViewModelLogic = RecipeDetailViewModel()
-
+    var backButtonAction: (() -> Void)?
+    
     private var recipeModel: RecipeModel? = nil
     private var sections: [[ReceptInfo]] = [[.description],
                                             [.cook]]
@@ -53,26 +54,25 @@ class RecipeDetailVC: UIViewController {
         self.id = id
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        bind()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchRecipeDetail(id: self.id)
-        bind()
     }
     func bind() {
         viewModel.randomRecipe.observe(on: self) { recipe in
             self.recipeModel = recipe
-            
             self.tableView.reloadData()
         }
     }
@@ -101,7 +101,7 @@ class RecipeDetailVC: UIViewController {
         }
     }
     @objc func tapBack() {
-        Router.shared.pop()
+        backButtonAction?() ?? Router.shared.pop()
     }
 }
 
@@ -128,13 +128,11 @@ extension RecipeDetailVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: AlgorithmCell.cellId, for: indexPath) as! AlgorithmCell
             cell.selectionStyle = .none
             cell.configure(model: recipeModel)
-
+            
             return cell
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    //    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? { nil }
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { 0 }
 }
