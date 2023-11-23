@@ -48,7 +48,7 @@ class AlgorithmCell: UITableViewCell {
     lazy var stepsValue: UILabel = {
         let label = UILabel()
         label.font = .montserratRegular(ofSize: 12)
-        label.text = "In a medium bowl, combine the shredded cabbage with 3 tablespoons of the taco"
+        label.text = ""
         label.textColor = .black
         label.numberOfLines = 0
         return label
@@ -111,5 +111,12 @@ class AlgorithmCell: UITableViewCell {
         let formattedIngredients = model?.ingredients.map { "· \($0)" }
         let ingredientsText = formattedIngredients?.joined(separator: "\n")
         ingredientsValue.text = ingredientsText
+        let numberedSteps = model?.steps.enumerated().map { (index, step) in
+            "\(index + 1). \"\(step)\""
+        }
+
+        let steps = numberedSteps?.joined(separator: "\n")
+        stepsValue.text = steps
+        
     }
 }

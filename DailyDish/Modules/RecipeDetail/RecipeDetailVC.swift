@@ -15,7 +15,7 @@ class RecipeDetailVC: UIViewController {
     private var sections: [[ReceptInfo]] = [[.description],
                                             [.cook]]
     private var id: Int
-    
+    private var isMain: Bool
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
@@ -50,8 +50,9 @@ class RecipeDetailVC: UIViewController {
         return table
     }()
     // MARK: - Init
-    init(id: Int) {
+    init(id: Int, backToMain: Bool) {
         self.id = id
+        self.isMain = backToMain
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -101,7 +102,7 @@ class RecipeDetailVC: UIViewController {
         }
     }
     @objc func tapBack() {
-        backButtonAction?() ?? Router.shared.pop()
+        isMain ? Router.shared.popToViewController(ofClass: MainController.self) : Router.shared.pop()
     }
 }
 

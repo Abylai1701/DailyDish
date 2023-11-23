@@ -11,6 +11,7 @@
 		758802C42B01A38000AC6E73 /* RecipeDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758802C32B01A38000AC6E73 /* RecipeDetailModel.swift */; };
 		758802C72B01B1AE00AC6E73 /* GenRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758802C62B01B1AE00AC6E73 /* GenRecipeViewModel.swift */; };
 		758802C92B01B25800AC6E73 /* RandomRecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758802C82B01B25800AC6E73 /* RandomRecipeModel.swift */; };
+		759159D32B0F38CE003D0131 /* SearchRecipesVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759159D22B0F38CE003D0131 /* SearchRecipesVIewModel.swift */; };
 		75AB32A82AE31C83001445C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32A72AE31C83001445C6 /* AppDelegate.swift */; };
 		75AB32AC2AE31C83001445C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB32AB2AE31C83001445C6 /* ViewController.swift */; };
 		75AB32AF2AE31C83001445C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AB32AD2AE31C83001445C6 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		758802C32B01A38000AC6E73 /* RecipeDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailModel.swift; sourceTree = "<group>"; };
 		758802C62B01B1AE00AC6E73 /* GenRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenRecipeViewModel.swift; sourceTree = "<group>"; };
 		758802C82B01B25800AC6E73 /* RandomRecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRecipeModel.swift; sourceTree = "<group>"; };
+		759159D22B0F38CE003D0131 /* SearchRecipesVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipesVIewModel.swift; sourceTree = "<group>"; };
 		75AB32A42AE31C83001445C6 /* DailyDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AB32A72AE31C83001445C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75AB32AB2AE31C83001445C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				75D8BD852AE465D1005CBD0C /* SearchRecipesVC.swift */,
+				759159D22B0F38CE003D0131 /* SearchRecipesVIewModel.swift */,
 				75D8BD872AE46639005CBD0C /* Cell */,
 			);
 			path = SearchRecipes;
@@ -561,6 +564,7 @@
 				75AB32B22AE31C83001445C6 /* DailyDish.xcdatamodeld in Sources */,
 				75AB32E22AE31D13001445C6 /* Extension.swift in Sources */,
 				75AB330C2AE31D28001445C6 /* Parser.swift in Sources */,
+				759159D32B0F38CE003D0131 /* SearchRecipesVIewModel.swift in Sources */,
 				75D8BD782AE34758005CBD0C /* SectionHeaderView.swift in Sources */,
 				758802C72B01B1AE00AC6E73 /* GenRecipeViewModel.swift in Sources */,
 				75D8BD8B2AE4786F005CBD0C /* GenerationAnimationVC.swift in Sources */,
@@ -722,8 +726,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6XSZD79NKT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyDish/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -731,6 +737,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,6 +745,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GGWP.DailyDish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -750,8 +758,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6XSZD79NKT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyDish/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -759,6 +769,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -766,6 +777,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GGWP.DailyDish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

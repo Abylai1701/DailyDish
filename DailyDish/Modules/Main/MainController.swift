@@ -3,15 +3,16 @@ import UIKit
 enum ProfileMenuType {
     case search
     case generate
-    case collection
+//    case collection
 }
 
 final class MainController: BaseController {
     
     //MARK: - Properties
     var sections: [[ProfileMenuType]] = [[.search] ,
-                                         [.generate],
-                                         [.collection]]
+                                         [.generate]
+//                                         [.collection]
+    ]
     
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero,
@@ -78,10 +79,10 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
                 Router.shared.push(vc)
             }
             return cell
-        case .collection:
-            let cell = tableView.dequeueReusableCell(withIdentifier: PrevRecipesCollCell.cellId,
-                                                     for: indexPath) as! PrevRecipesCollCell
-            return cell
+//        case .collection:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: PrevRecipesCollCell.cellId,
+//                                                     for: indexPath) as! PrevRecipesCollCell
+//            return cell
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -95,9 +96,9 @@ extension MainController: UITableViewDataSource, UITableViewDelegate {
                 return nil
             case .generate:
                 return nil
-            case .collection:
-                let view = SectionHeaderView(title: "Previouslt generated items")
-                return view
+//            case .collection:
+//                let view = SectionHeaderView(title: "Previouslt generated items")
+//                return view
             }
         }
         return nil

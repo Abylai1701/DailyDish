@@ -18,9 +18,10 @@ class RecipeCell: UITableViewCell {
     }()
     lazy var mainTitle: UILabel = {
         let label = UILabel()
-        label.font = .montserratSemiBold(ofSize: 34)
+        label.font = .montserratSemiBold(ofSize: 30)
         label.text = "Burito"
         label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     private lazy var circle: UIView = {
@@ -77,6 +78,7 @@ class RecipeCell: UITableViewCell {
         mainTitle.snp.makeConstraints { make in
             make.top.equalTo(mainImage.snp.bottom).offset(22)
             make.left.equalToSuperview().offset(28)
+            make.right.equalToSuperview().offset(-28)
         }
         circle.snp.makeConstraints { make in
             make.top.equalTo(mainTitle.snp.bottom).offset(21)
@@ -95,10 +97,9 @@ class RecipeCell: UITableViewCell {
         }
     }
     
-//    func configure(model: GoalModel) {
-//        titleLabel.text = model.name
-//        let progress = Int((model.currentSeries * 100)/model.iterationCount)
-//        progressView.progress = Float(progress) * 0.01
-//        countLabel.text = "\(model.iterationCount)/\(model.currentSeries)"
-//    }
+    func configure(model: RandomRecipe) {
+        mainImage.kf.setImage(with: model.image.url)
+        mainTitle.text = model.name
+        infoLabel.text = model.description
+    }
 }

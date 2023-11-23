@@ -1,15 +1,13 @@
 import UIKit
 
-final class GenerationAnimationVC: BaseController {
+final class GenerationAnimationVC: UIViewController {
     
     //MARK: - Properties
     private let viewModel: GenRecipeViewModelLogic = GenRecipeViewModel()
     
     private var recipeModel: RandomRecipe? = nil
     
-    private var timerWorkItem: DispatchWorkItem?
-    
-    private lazy var backButton: UIButton = {
+    private lazy var genBackButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
         button.setImage(UIImage(named: "back_icon"), for: .normal)
@@ -20,7 +18,7 @@ final class GenerationAnimationVC: BaseController {
         
         return button
     }()
-    lazy var backTitle: UILabel = {
+    lazy var genBackTitle: UILabel = {
         let label = UILabel()
         label.font = .montserratSemiBold(ofSize: 14)
         label.text = "Back"
@@ -52,25 +50,16 @@ final class GenerationAnimationVC: BaseController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchRandomRecipe()
-        bind()
+        genBind()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let animationDistance: CGFloat = 10
-        
-        UIView.animate(withDuration: 1.0, delay: 0, options: [.autoreverse, .repeat], animations: {
-            self.mainImage.frame.origin.y += animationDistance
-        }, completion: nil)
-        
-        timerWorkItem = DispatchWorkItem { [weak self] in
-            self?.navigateToNextController()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: timerWorkItem!)
+        startAnimation()
     }
-    func bind() {
-        viewModel.randomRecipe.observe(on: self) { recipe in
-            self.recipeModel = recipe            
+    func genBind() {
+        viewModel.randomRecipe.observe(on: self) { [weak self] recipe in
+            guard let self = self else {return}
+            self.recipeModel = recipe
         }
     }
     //MARK: - Setup Views
@@ -78,22 +67,22 @@ final class GenerationAnimationVC: BaseController {
     private func setupViews() {
         view.backgroundColor = .white
         
-        view.addSubviews(backButton,
-                         backTitle,
+        view.addSubviews(genBackButton,
+                         genBackTitle,
                          mainImage,
                          generatingTitle)
         
-        backButton.snp.makeConstraints { make in
+        genBackButton.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(16)
             make.top.equalToSuperview().offset(65)
         }
-        backTitle.snp.makeConstraints { make in
-            make.left.equalTo(backButton.snp.right)
+        genBackTitle.snp.makeConstraints { make in
+            make.left.equalTo(genBackButton.snp.right)
             make.top.equalToSuperview().offset(68)
         }
         mainImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(backTitle.snp.bottom).offset(150)
+            make.top.equalTo(genBackTitle.snp.bottom).offset(150)
             make.width.equalTo(78)
             make.height.equalTo(85)
         }
@@ -103,15 +92,23 @@ final class GenerationAnimationVC: BaseController {
         }
     }
     private func navigateToNextController() {
-        let vc = RecipeDetailVC(id: recipeModel?.id ?? 667)
-        vc.backButtonAction = { [weak self] in
-            self?.navigationController?.popToRootViewController(animated: true)
-        }
+        let vc = RecipeDetailVC(id: recipeModel?.id ?? 667, backToMain: true)
         Router.shared.push(vc)
+    }
+    private func startAnimation() {
+        let animationDistance: CGFloat = 10
+
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.autoreverse, .repeat], animations: {
+            self.mainImage.frame.origin.y += animationDistance
+        }, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+            guard let self = self else { return }
+            self.navigateToNextController()
+        }
     }
     @objc
     private func goToMain() {
-        timerWorkItem?.cancel()
         Router.shared.pop()
     }
 }

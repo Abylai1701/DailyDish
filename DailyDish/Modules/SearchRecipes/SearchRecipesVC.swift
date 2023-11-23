@@ -3,9 +3,9 @@ import UIKit
 final class SearchRecipesVC: BaseController {
     
     //MARK: - Properties
-//    private let viewModel: EventDetailPageViewModelLogic = EventDetaiPageViewModel()
-//
-//    private var eventModel: EventModel? = nil
+    private let viewModel: SearchRecipesVIewModelLogic = SearchRecipesVIewModel()
+    private var recipes: [RandomRecipe] = []
+    var searchTimer: Timer?
     
     
     private lazy var backButton: UIButton = {
@@ -54,40 +54,20 @@ final class SearchRecipesVC: BaseController {
         table.dataSource = self
         return table
     }()
-   //MARK: - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-//        bind()
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        viewModel.fetchEventDetail(id: self.id)
-//    }
-//    func bind() {
-//        viewModel.eventDetail.observe(on: self) { event in
-//            self.eventModel = event
-//            if self.eventModel?.isFavorite == true {
-//                self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//            } else {
-//                self.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-//            }
-//
-//            if UserManager.shared.getAccessToken() == nil{
-//                self.likeButton.isHidden = true
-//            }
-//            if self.eventModel?.team == nil {
-//                self.sections = self.sections.map { section in
-//                    if case .eventInfo(let infoList) = section {
-//                        return .eventInfo(infoList.filter { $0 != .team })
-//                    }
-//                    return section
-//                }
-//            }
-//            self.tableView.reloadData()
-//        }
-//    }
+    
+    func bind() {
+        viewModel.recipes.observe(on: self) { recipes in
+            self.recipes = recipes
+            
+            self.tableView.reloadData()
+        }
+    }
     //MARK: - Setup Views
     
     private func setupViews() {
@@ -118,13 +98,6 @@ final class SearchRecipesVC: BaseController {
             make.bottom.equalToSuperview()
         }
     }
-
-    //MARK: Functions
-    
-//    @objc
-//    private func tapFavorite() {
-//        self.viewModel.favorite(id: id)
-//    }
 }
 
 
@@ -133,7 +106,7 @@ final class SearchRecipesVC: BaseController {
 extension SearchRecipesVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return recipes.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {1}
@@ -141,14 +114,32 @@ extension SearchRecipesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RecipeCell.cellId, for: indexPath) as! RecipeCell
         cell.selectionStyle = .none
+        cell.configure(model: recipes[indexPath.section])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let id = recipes[indexPath.section].id
+        let vc = RecipeDetailVC(id: id, backToMain: false)
+        Router.shared.push(vc)
+    }
 }
 extension SearchRecipesVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let searchText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) else {
+            return true
+        }
+        searchTimer?.invalidate()
+        
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.viewModel.fetchRecipes(recipe: searchText)
+            self.bind()
+        }
         return true
     }
 }
+
